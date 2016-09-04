@@ -15,9 +15,15 @@ $ npm install ml-tree-set
 
 ## Documentation
 
-This class implements the following function:
+TreeSet allows to create a sorted array of objects by adding each new element in order, according with the comparator` function`.
+TreeSet does not really implements a tree to maintain the order. It just add the elements in the correct place in the array. 
+Nevertheless adding, removing or finding an element is guaranteed to be performed in log(n).
+
+Unlike the other binary-tree implementations available in npm, this one allows repeated keys.
+
 
 ###constructor(comparator): 
+
 Create a new TreeSet object. The comparator gives the order to the set. By default it is the natural comparator
 
 ```
