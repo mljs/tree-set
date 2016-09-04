@@ -15,21 +15,42 @@ $ npm install ml-tree-set
 
 ## Documentation
 
-This class implements the following function
-constructor(comparator): Create a new TreeSet object. The comparator gives the order to the set. 
-By default it is the natural comparator
+This class implements the following function:
+
+###constructor(comparator): 
+Create a new TreeSet object. The comparator gives the order to the set. By default it is the natural comparator
 
 ```
 function(a, b){ return a - b };
 ```
 
-add(element): Add an element to the sorted list
-size(): Return the number of elements in the set
-last(): Return the last element of the sorted list
-first(): Return the first element of the sorted list
-pollLast(): Return and removes the last element of the sorted list
-pollFirst(): Return and removes the first element of the sorted list
-binarySearch(element): Performs a binary search of value in array
+### add(element): 
+
+Add an element to the sorted list
+
+### size(): 
+
+Return the number of elements in the set
+
+### last(): 
+
+Return the last element of the sorted list
+
+### first(): 
+
+Return the first element of the sorted list
+
+### pollLast(): 
+
+Return and removes the last element of the sorted list
+
+### pollFirst(): 
+
+Return and removes the first element of the sorted list
+
+### binarySearch(element): 
+
+Performs a binary search of value in array
 
 ##Example
 
