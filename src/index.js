@@ -26,6 +26,10 @@ class TreeSet{
         return this.elements[0];
     }
 
+    isEmpty(){
+        return this.size()===0;
+    }
+
     pollLast(){
         if(this.length>0){
             this.length--;
