@@ -2,15 +2,24 @@
   "name": "ml-tree-set",
   "version": "0.1.0",
   "description": "A JavaScript emulator of the TreeSet Java class",
-  "main": "./src/index.js",
+  "type": "module",
+  "exports": "./lib/index.js",
   "files": [
+    "lib",
     "src"
   ],
   "scripts": {
-    "eslint": "eslint src test",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf lib",
+    "eslint": "eslint .",
     "eslint-fix": "npm run eslint -- --fix",
-    "test": "npm run test-mocha && npm run eslint",
-    "test-mocha": "mocha --require should --reporter mocha-better-spec-reporter"
+    "prepack": "npm run tsc",
+    "prettier": "prettier --check .",
+    "prettier-write": "prettier --write .",
+    "test": "npm run test-only && npm run check-types && npm run eslint && npm run prettier",
+    "test-only": "vitest run --coverage",
+    "tsc": "npm run clean && npm run tsc-build",
+    "tsc-build": "tsc --project tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -30,11 +39,13 @@
   },
   "homepage": "https://github.com/mljs/tree-set#readme",
   "devDependencies": {
-    "eslint": "^3.1.1",
-    "eslint-config-cheminfo": "^1.1.2",
-    "eslint-plugin-no-only-tests": "^1.1.0",
-    "mocha": "^3.0.0",
-    "mocha-better-spec-reporter": "^3.0.2",
-    "should": "^11.1.1"
+    "@types/node": "^22.15.21",
+    "@vitest/coverage-v8": "^3.1.4",
+    "eslint": "^9.27.0",
+    "eslint-config-cheminfo-typescript": "^18.0.1",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
   }
 }

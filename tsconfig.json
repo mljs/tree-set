@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2022", "WebWorker"],
+    "types": [],
+    "target": "ES2022",
+    "outDir": "lib",
+    "module": "NodeNext",
+    "strict": true,
+    "skipLibCheck": false,
+    "resolveJsonModule": false,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noImplicitAny": false,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["src"]
+}
