@@ -1,16 +1,20 @@
-export class TreeSet {
-  /**
-   * @param {any} [comparator]
-   */
-  constructor(comparator) {
+export type TreeSetComparator<T> = (a: T, b: T) => number;
+
+export class TreeSet<T = number> {
+  private length: number;
+  private comparator: TreeSetComparator<T>;
+  public elements: T[];
+
+  constructor(comparator?: TreeSetComparator<T>) {
     this.length = 0;
     this.elements = [];
     if (comparator) {
       this.comparator = comparator;
     } else {
-      this.comparator = (a, b) => {
+      // @ts-expect-error Default to TreeSet<number>
+      this.comparator = ((a, b) => {
         return a - b;
-      };
+      }) as TreeSetComparator<number>;
     }
   }
 
@@ -46,7 +50,7 @@ export class TreeSet {
     return null;
   }
 
-  add(element) {
+  add(element: T) {
     let index = this.binarySearch(element);
     if (index < 0) {
       index = -index - 1;
@@ -57,17 +61,17 @@ export class TreeSet {
 
   /**
    * Performs a binary search of value in array
-   * @param {number} value - Value to search in array
+   * @param value - Value to search in array
    * @return {number} If value is found, returns its index in array. Otherwise, returns a negative number indicating where the value should be inserted: -(index + 1)
    */
-  binarySearch(value) {
+  binarySearch(value: T) {
     let low = 0;
     let high = this.elements.length - 1;
 
     while (low <= high) {
-      let mid = (low + high) >>> 1;
-      let midValue = this.elements[mid];
-      let cmp = this.comparator(midValue, value);
+      const mid = (low + high) >>> 1;
+      const midValue = this.elements[mid] as T;
+      const cmp = this.comparator(midValue, value);
       if (cmp < 0) {
         low = mid + 1;
       } else if (cmp > 0) {

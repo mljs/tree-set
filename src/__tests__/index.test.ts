@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest';
 
-import { TreeSet } from '../index.js';
+import { TreeSet } from '../index.ts';
+
+interface TestObject {
+  index: number;
+  value: string;
+}
 
 describe('Tree set', () => {
   it('Object generation', () => {
@@ -31,7 +36,7 @@ describe('Tree set', () => {
   });
 
   it('Array of objects: Add', () => {
-    const myList = new TreeSet((a, b) => {
+    const myList = new TreeSet<TestObject>((a, b) => {
       return a.index - b.index;
     });
     myList.add({ index: 0, value: 'a' });
@@ -48,7 +53,7 @@ describe('Tree set', () => {
   });
 
   it('Array of objects: Add and pollFirst()', () => {
-    const myList = new TreeSet((a, b) => {
+    const myList = new TreeSet<TestObject>((a, b) => {
       return a.index - b.index;
     });
     myList.add({ index: 0, value: 'a' });
@@ -65,7 +70,7 @@ describe('Tree set', () => {
   });
 
   it('Array of objects: Add and pollLast()', () => {
-    const myList = new TreeSet((a, b) => {
+    const myList = new TreeSet<TestObject>((a, b) => {
       return a.index - b.index;
     });
     myList.add({ index: 0, value: 'a' });
