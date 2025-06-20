@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/mljs/tree-set/compare/v1.0.0...v1.0.1) (2025-06-20)
+
+
+### Bug Fixes
+
+* define in TypeScript ([#6](https://github.com/mljs/tree-set/issues/6)) ([839dc3e](https://github.com/mljs/tree-set/commit/839dc3e3217543368dbfec9afaaa7e3ddcd1c8c7))
+
 ## 1.0.0 (2025-05-25)
 
 

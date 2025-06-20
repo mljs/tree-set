@@ -1,6 +1,6 @@
 {
   "name": "ml-tree-set",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A JavaScript emulator of the TreeSet Java class",
   "type": "module",
   "exports": "./lib/index.js",
